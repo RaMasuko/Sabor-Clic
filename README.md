@@ -1,3 +1,3 @@
 # Sabor-Clic
 
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+Sistema de Gestão para Dark Kitchens e Espaços Gastronômicos)

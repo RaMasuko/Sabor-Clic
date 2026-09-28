@@ -43,27 +43,25 @@ Projeto desenvolvido em equipa pelos estudantes do **IFSP (Câmpus São Paulo)**
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/NOME_DO_GH_RAFAEL">
-        <img src="https://github.com/NOME_DO_GH_RAFAEL.png" width="90px;" alt="Rafael Fujita"/><br />
+      <a href="https://github.com/RaMasuko">
+        <img src="https://github.com/RaMasuko.png" width="90px;" alt="Rafael Fujita"/><br />
         <sub><b>Rafael Fujita</b></sub>
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/NOME_DO_GH_LUCAS">
-        <img src="https://github.com/NOME_DO_GH_LUCAS.png" width="90px;" alt="Lucas da Silva"/><br />
+      <a href="https://github.com/LucasHRode">
+        <img src="https://github.com/LucasHRode.png" width="90px;" alt="Lucas da Silva"/><br />
         <sub><b>Lucas da Silva</b></sub>
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/NOME_DO_GH_THIAGO">
-        <img src="https://github.com/NOME_DO_GH_THIAGO.png" width="90px;" alt="Thiago Daiki"/><br />
+      <a href="https://github.com/Thiagodaiki">
+        <img src="https://github.com/Thiagodaiki.png" width="90px;" alt="Thiago Daiki"/><br />
         <sub><b>Thiago Daiki</b></sub>
       </a>
     </td>
   </tr>
 </table>
-
-*(Nota: Podes substituir `NOME_DO_GH_...` pelo nome de utilizador do GitHub de cada um dos teus colegas para carregar a foto de perfil e o link correto deles)*
 
 ---
 

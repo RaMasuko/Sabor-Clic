@@ -2,9 +2,9 @@
 
 IFSP Campus São Paulo
 
-Integrantes: [preencher nomes completos]
+Integrantes: Rafael Fujita, Thiago Daiki, Lucas Henrique, Isabela Gomes
 
-Turma: [preencher]
+Turma: 231
 
 São Paulo, 2026
 

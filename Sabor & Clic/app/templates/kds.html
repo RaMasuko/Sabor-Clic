@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PAINEL KDS - COZINHA - Sabor & Clic</title>
+
+    {% include '_head_security.html' %}
+  </head>
+  <body>
+    {% include '_flash.html' %}
+
+    <header>
+      <h1 class="logo">Sabor & Clic</h1>
+
+      {% include '_logout.html' %}
+    </header>
+    <main class="container">
+      <h2>PAINEL KDS - COZINHA</h2>
+      <p id="mensagem-kds" role="status">Carregando pedidos…</p>
+      <button id="atualizar-kds">Atualizar fila</button>
+      <div class="grid-pedidos" id="pedidos-container"></div>
+    </main>
+
+    {% include '_nav.html' %}
+
+    <script src="/static/kds.js" defer></script>
+  </body>
+</html>

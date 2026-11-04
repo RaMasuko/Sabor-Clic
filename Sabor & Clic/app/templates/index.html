@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Catálogo de Pratos - Sabor & Clic</title>
+
+    {% include '_head_security.html' %}
+  </head>
+  <body>
+    {% include '_flash.html' %}
+
+    <header>
+      <h1 class="logo">Sabor & Clic</h1>
+
+      {% include '_logout.html' %}
+    </header>
+    <main class="container">
+      <h2>Catálogo de Pratos</h2>
+      <p id="mensagem-cardapio" role="status">Carregando cardápio…</p>
+      <div
+        id="cardapio-container"
+        data-cliente="{{ 'sim' if usuario_atual and usuario_atual.perfil == 'cliente' else 'nao' }}"
+      ></div>
+
+      {% if usuario_atual and usuario_atual.perfil == 'cliente' %}
+
+      <section class="carrinho-box">
+        <h3>Seu Carrinho</h3>
+        <ul id="itens-carrinho"></ul>
+        <p id="total-carrinho">Total: R$ 0,00</p>
+
+        <label for="endereco-entrega">Endereço de entrega</label>
+        <input
+          id="endereco-entrega"
+          name="endereco-entrega"
+          type="text"
+          required
+          maxlength="200"
+          autocomplete="street-address"
+        />
+        <button id="finalizar-pedido">FINALIZAR PEDIDO</button>
+
+        <p id="mensagem-pedido" role="status"></p>
+      </section>
+
+      {% elif not usuario_atual %}
+
+      <p><a href="/login">Entre com sua conta de cliente para fazer um pedido.</a></p>
+
+      {% else %}
+
+      <p>Catálogo para consulta da equipe.</p>
+
+      {% endif %}
+    </main>
+
+    {% include '_nav.html' %}
+
+    <script src="/static/script.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Estoque em porções - Sabor & Clic</title>
+
+    {% include '_head_security.html' %}
+  </head>
+  <body>
+    {% include '_flash.html' %}
+
+    <header>
+      <h1 class="logo">Sabor & Clic</h1>
+
+      {% include '_logout.html' %}
+    </header>
+    <main class="container">
+      <h2>Estoque em porções</h2>
+      <p id="mensagem" role="status"></p>
+      <p><a href="/adicionar-prato">Cadastrar e editar pratos / estoque</a></p>
+      <div id="catalogo-admin"></div>
+    </main>
+
+    {% include '_nav.html' %}
+
+    <script src="/static/novo_prato.js" defer></script>
+  </body>
+</html>

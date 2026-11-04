@@ -1,0 +1,34 @@
+<nav class="bottom-nav" aria-label="Navegação principal">
+  <a class="nav-item" href="/">EXPLORAR</a>
+
+  {% if usuario_atual %}
+
+  {% if usuario_atual.perfil in ['cliente','administrador'] %}
+
+  <a class="nav-item" href="/reservas">RESERVAS</a>
+
+  {% endif %}
+
+  {% if usuario_atual.perfil in ['administrador','cozinheiro'] %}
+
+  <a class="nav-item" href="/kds">COZINHA</a>
+
+  {% endif %}
+
+  {% if usuario_atual.perfil == 'administrador' %}
+
+  <a class="nav-item" href="/adicionar-prato">PRATOS</a>
+  <a class="nav-item" href="/estoque">ESTOQUE</a>
+  <a class="nav-item" href="/relatorios">RELATÓRIOS</a>
+  <a class="nav-item" href="/funcionarios/novo">EQUIPE</a>
+
+  {% endif %}
+
+  <a class="nav-item" href="/perfil">PERFIL</a>
+
+  {% else %}
+
+  <a class="nav-item" href="/login">ENTRAR</a>
+
+  {% endif %}
+</nav>

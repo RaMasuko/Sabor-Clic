@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>AGENDAMENTO DE BANCADAS - Sabor & Clic</title>
+
+    {% include '_head_security.html' %}
+  </head>
+  <body>
+    {% include '_flash.html' %}
+
+    <header>
+      <h1 class="logo">Sabor & Clic</h1>
+
+      {% include '_logout.html' %}
+    </header>
+    <main class="container">
+      <h2>AGENDAMENTO DE BANCADAS</h2>
+
+      {% if usuario_atual.perfil == 'administrador' %}
+
+      <h3>Cadastrar bancada</h3>
+      <form id="form-bancada">
+        <label for="nome">Nome da bancada</label>
+        <input id="nome" name="nome" type="text" required maxlength="100" />
+        <label for="localizacao">Localização</label>
+        <input id="localizacao" name="localizacao" type="text" required maxlength="200" />
+        <button>Cadastrar bancada</button>
+      </form>
+
+      {% else %}
+
+      <form id="form-reserva">
+        <label for="id_bancada">Bancada</label>
+        <select id="id_bancada" required></select>
+        <label for="inicio">Início</label>
+        <input id="inicio" name="inicio" type="datetime-local" required />
+        <label for="fim">Fim</label>
+        <input id="fim" name="fim" type="datetime-local" required />
+        <button>Confirmar reserva</button>
+      </form>
+
+      {% endif %}
+
+      <p id="mensagem-reservas" role="status"></p>
+      <h3>Reservas</h3>
+      <button id="atualizar-reservas">Atualizar reservas</button>
+      <div id="lista-reservas"></div>
+    </main>
+
+    {% include '_nav.html' %}
+
+    <script src="/static/reservas.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Relatórios - Sabor & Clic</title>
+
+    {% include '_head_security.html' %}
+  </head>
+  <body>
+    {% include '_flash.html' %}
+
+    <header>
+      <h1 class="logo">Sabor & Clic</h1>
+
+      {% include '_logout.html' %}
+    </header>
+    <main class="container">
+      <h2>Relatórios</h2>
+      <button id="atualizar-relatorios">Atualizar relatórios</button>
+      <p id="mensagem-relatorios" role="status"></p>
+      <div id="relatorios"></div>
+    </main>
+
+    {% include '_nav.html' %}
+
+    <script src="/static/relatorios.js" defer></script>
+  </body>
+</html>

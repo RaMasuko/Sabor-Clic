@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Minha conta - Sabor & Clic</title>
+
+    {% include '_head_security.html' %}
+  </head>
+  <body>
+    {% include '_flash.html' %}
+
+    <header>
+      <h1 class="logo">Sabor & Clic</h1>
+
+      {% include '_logout.html' %}
+    </header>
+    <main class="container">
+      <h2>Minha conta</h2>
+      <p id="perfil-email"></p>
+      <p id="perfil-tipo"></p>
+      <form id="form-perfil">
+        <label for="nome">Nome</label>
+        <input id="nome" name="nome" type="text" required minlength="3" maxlength="100" />
+        <div id="campos-cliente">
+          <label for="endereco">Endereço de entrega</label>
+          <input id="endereco" name="endereco" type="text" required minlength="5" maxlength="200" />
+        </div>
+        <div id="campos-equipe">
+          <label for="turno">Turno</label>
+          <input id="turno" name="turno" type="text" maxlength="100" />
+          <label for="especialidade">Especialidade</label>
+          <input id="especialidade" name="especialidade" type="text" maxlength="100" />
+        </div>
+        <button>Salvar perfil</button>
+      </form>
+      <p id="mensagem-perfil" role="status"></p>
+
+      {% if usuario_atual.perfil == 'cliente' %}
+
+      <h3>Meus pedidos</h3>
+      <p id="mensagem-pedidos" role="status"></p>
+      <div id="meus-pedidos"></div>
+      <button id="atualizar-pedidos">Atualizar pedidos</button>
+
+      {% endif %}
+    </main>
+
+    {% include '_nav.html' %}
+
+    <script src="/static/perfil.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Login - Sabor & Clic</title>
+
+    {% include '_head_security.html' %}
+  </head>
+  <body>
+    {% include '_flash.html' %}
+
+    <header>
+      <h1 class="logo">Sabor & Clic</h1>
+
+      {% include '_logout.html' %}
+    </header>
+    <main class="container">
+      <h2>Login</h2>
+      <form id="auth-form" data-api="/api/login" method="post">
+        <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+        <label for="email">E-mail</label>
+        <input id="email" name="email" type="email" required maxlength="120" autocomplete="email" />
+        <label for="senha">Senha</label>
+        <input
+          id="senha"
+          name="senha"
+          type="password"
+          required
+          maxlength="128"
+          autocomplete="current-password"
+        />
+        <button type="submit">ENTRAR</button>
+      </form>
+      <p id="mensagem-auth" role="status"></p>
+      <p>
+        <a href="/login">Login</a>
+        ·
+        <a href="/cadastro">Cadastro de cliente</a>
+      </p>
+    </main>
+
+    {% include '_nav.html' %}
+
+    <script src="/static/auth.js" defer></script>
+  </body>
+</html>

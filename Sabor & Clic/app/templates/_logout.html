@@ -1,0 +1,12 @@
+{% if usuario_atual %}
+
+<form id="logout-form" method="post" action="/logout">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+  <button type="submit">Sair</button>
+</form>
+
+{% else %}
+
+<a href="/login">Entrar</a>
+
+{% endif %}

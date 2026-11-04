@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f8f9fa;
+  color: #333;
+  padding-bottom: 110px;
+}
+header {
+  background: white;
+  padding: 15px 20px;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  color: #d32f2f;
+  font-size: 24px;
+  margin: 0;
+}
+.container {
+  padding: 20px;
+  max-width: 760px;
+  margin: auto;
+}
+.card,
+.carrinho-box,
+.login-card,
+.cadastro-card {
+  background: #fff;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid #eee;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 4px #0000000d;
+}
+.card-body {
+  padding: 0;
+}
+.card-title {
+  font-size: 17px;
+}
+.card-price {
+  color: #d32f2f;
+  font-weight: bold;
+}
+button,
+.btn-red,
+.btn-status {
+  background: #d32f2f;
+  color: white;
+  border: 0;
+  padding: 11px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+button.secondary {
+  background: #666;
+}
+button + button {
+  margin-left: 8px;
+}
+label {
+  display: block;
+  font-weight: bold;
+  margin: 14px 0 6px;
+}
+input,
+textarea,
+select {
+  font: inherit;
+  width: 100%;
+  padding: 11px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+textarea {
+  min-height: 70px;
+}
+form button {
+  margin-top: 15px;
+}
+nav.bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-top: 1px solid #ddd;
+  display: flex;
+  justify-content: space-around;
+  gap: 6px;
+  padding: 13px 6px;
+  flex-wrap: wrap;
+  z-index: 2;
+}
+.nav-item {
+  color: #666;
+  text-decoration: none;
+  font-size: 11px;
+  text-align: center;
+}
+.nav-item.active,
+a {
+  color: #d32f2f;
+}
+[role="status"] {
+  min-height: 1.3em;
+  white-space: pre-line;
+}
+.error {
+  color: #b71c1c;
+}
+.success {
+  color: #176831;
+}
+.grid-pedidos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 16px;
+}
+.card-pedido {
+  background: white;
+  border-left: 5px solid #d32f2f;
+  border-radius: 6px;
+  padding: 15px;
+}
+li {
+  margin: 10px 0;
+}
+li input {
+  width: 75px;
+  margin: 0 8px;
+}
+.auth {
+  max-width: 440px;
+  margin: 5vh auto;
+  padding: 20px;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+td,
+th {
+  padding: 9px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+.table-wrap {
+  overflow: auto;
+}
+:focus-visible {
+  outline: 3px solid #d32f2f;
+  outline-offset: 3px;
+}
+@media (max-width: 440px) {
+  .container {
+    padding: 14px;
+  }
+  header {
+    padding: 14px;
+  }
+  .logo {
+    font-size: 21px;
+  }
+}

@@ -1,0 +1,14 @@
+{% with mensagens = get_flashed_messages(with_categories=true) %}
+
+{% for categoria, mensagem in mensagens %}
+
+<p
+  role="status"
+  style="padding: 10px; border: 1px solid #ddd; background: #fff; color: {{ '#b71c1c' if categoria == 'erro' else '#246528' }};"
+>
+  {{ mensagem }}
+</p>
+
+{% endfor %}
+
+{% endwith %}

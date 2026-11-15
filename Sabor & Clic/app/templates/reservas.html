@@ -33,6 +33,7 @@
       <form id="form-reserva">
         <label for="id_bancada">Bancada</label>
         <select id="id_bancada" required></select>
+        <div id="previa-bancada"></div>
         <label for="inicio">Início</label>
         <input id="inicio" name="inicio" type="datetime-local" required />
         <label for="fim">Fim</label>
@@ -40,6 +41,19 @@
         <button>Confirmar reserva</button>
       </form>
 
+      {% endif %}
+
+      <template id="foto-bancada">
+        <figure class="foto-bancada">
+          <img src="{{ url_for('static', filename='img/bancada.jpg') }}"
+            alt="Bancada de cozinha com ilha e bancos" width="2200" height="1467" />
+          <figcaption>Imagem ilustrativa · <a href="https://unsplash.com/photos/Sfz7eEMpR7s">Unsplash</a></figcaption>
+        </figure>
+      </template>
+
+      {% if usuario_atual.perfil == 'administrador' %}
+      <h3>Bancadas cadastradas</h3>
+      <div id="lista-bancadas" class="lista-bancadas"></div>
       {% endif %}
 
       <p id="mensagem-reservas" role="status"></p>

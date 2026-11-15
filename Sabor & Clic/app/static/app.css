@@ -173,3 +173,35 @@ th {
     font-size: 21px;
   }
 }
+
+.foto-prato {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.lista-bancadas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 1rem;
+}
+
+.foto-bancada {
+  max-width: 420px;
+  margin: 0.75rem 0;
+}
+
+.foto-bancada img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.foto-bancada figcaption {
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+}

@@ -1,8 +1,27 @@
 "use strict";
+function fotoBancada() {
+  return document.getElementById("foto-bancada").content.cloneNode(true);
+}
+
 async function carregarBancadas() {
   const select = document.getElementById("id_bancada");
   try {
     const r = await SaborAPI.request("/api/bancadas");
+    const lista = document.getElementById("lista-bancadas");
+    if (lista) {
+      lista.replaceChildren();
+      for (const bancada of r.dados) {
+        const card = SaborUI.el("article", undefined, "card");
+        card.append(
+          SaborUI.el("h4", bancada.nome),
+          SaborUI.el("p", bancada.localizacao),
+          fotoBancada(),
+        );
+        lista.append(card);
+      }
+      if (!r.dados.length)
+        lista.append(SaborUI.el("p", "Nenhuma bancada cadastrada."));
+    }
     if (select) {
       select.replaceChildren();
       r.dados.forEach((b) => {
@@ -15,11 +34,22 @@ async function carregarBancadas() {
         o.value = "";
         select.append(o);
       }
+      atualizarPreviaBancada();
     }
   } catch (e) {
     SaborUI.message("mensagem-reservas", e.message, true);
   }
 }
+function atualizarPreviaBancada() {
+  const select = document.getElementById("id_bancada");
+  const previa = document.getElementById("previa-bancada");
+  previa.replaceChildren();
+  if (select.value) previa.append(fotoBancada());
+}
+
+document.getElementById("id_bancada")
+  ?.addEventListener("change", atualizarPreviaBancada);
+
 async function carregarReservas() {
   try {
     const r = await SaborAPI.request("/api/reservas");

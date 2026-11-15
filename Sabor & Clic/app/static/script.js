@@ -25,6 +25,17 @@ class AppController {
       container.replaceChildren();
       this.#cardapio.forEach((p) => {
         const c = SaborUI.el("article", undefined, "card");
+        const nome = p.nome.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
+        const foto = nome.includes("coxinha") ? "coxinha" :
+          /hamburguer|burger/.test(nome) ? "hamburguer" : null;
+        if (foto) {
+          const imagem = document.createElement("img");
+          imagem.className = "foto-prato";
+          imagem.src = "/static/img/" + foto + ".jpg";
+          imagem.alt = "Foto ilustrativa: " + p.nome;
+          imagem.loading = "lazy";
+          c.append(imagem);
+        }
         c.append(
           SaborUI.el("h3", p.nome, "card-title"),
           SaborUI.el("p", p.descricao),

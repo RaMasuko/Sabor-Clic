@@ -34,6 +34,7 @@ def create_app(test_config=None):
         DATABASE=os.environ.get("SABOR_DATABASE", str(root / "sabor_clic.db")),
         SECRET_KEY=os.environ.get("SABOR_SECRET_KEY"),
         PRODUCTION=production,
+        ADMIN_DEMO=os.environ.get("SABOR_ADMIN_DEMO", "1") == "1",
         DEBUG=False,
         SESSION_COOKIE_HTTPONLY=True,
         SESSION_COOKIE_SAMESITE="Lax",
@@ -57,6 +58,10 @@ def create_app(test_config=None):
 
     app.teardown_appcontext(close_db)
     init_db(app)
+    from .models.admin_model import AdminModel
+
+    with app.app_context():
+        AdminModel.garantir_demo()
     from .middleware.middleware import init_security
     from .controllers.main_controller import main_bp
     from .controllers.cardapio_controller import cardapio_bp

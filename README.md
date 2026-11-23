@@ -6,7 +6,7 @@
 
 ## 📌 Sobre o Projeto
 
-O **Sabor & Click** é uma aplicação web desenvolvida com o objetivo de simplificar o acesso a opções gastronómicas, permitindo que os utilizadores explorem pratos, consultem detalhes de cardápios e façam pedidos de forma intuitiva.
+O **Sabor & Clic** é uma aplicação web desenvolvida com o objetivo de simplificar o acesso a opções gastronómicas, permitindo que os utilizadores explorem pratos, consultem detalhes de cardápios e façam pedidos de forma intuitiva.
 
 ### 🚀 Funcionalidades
 - 🍕 **Catálogo de Pratos/Cardápio:** Visualização intuitiva de refeições, categorias e preços.

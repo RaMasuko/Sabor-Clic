@@ -1,4 +1,4 @@
-# 🍽️ Sabor & Click
+# 🍽️ Sabor & Clic
 
 > **Uma solução digital rápida e prática para aproximar utilizadores da gastronomia através de menus e pedidos num clique.**
 
